@@ -19,8 +19,7 @@ stab_control <- function(B = 500, measure = list(tvdist, ccc),
     sampler <- get(sampler, mode = "function", envir = parent.frame())
   if (is.function(sampler)) {
     samp <- try(sampler(B = B, ...), silent = TRUE)
-    if (!inherits(samp, "try-error") && is.list(samp) && c("method", "sampler") %in% 
-        names(samp)) {
+    if (!inherits(samp, "try-error") && is.list(samp) && all(c("method", "sampler") %in% names(samp))) {
       sampler <- samp
     } else {
       sampler <- list(method = "User-defined", sampler = sampler)
