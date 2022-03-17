@@ -35,8 +35,7 @@ stab_control <- function(B = 500, measure = list(tvdist, ccc),
       mfun <- get(mfun, mode = "function", envir = parent.frame())
     if (is.function(mfun)) {
       samp <- try(mfun(), silent = TRUE)
-      if (!inherits(samp, "try-error") && is.list(samp) && c("name", "measure") %in% 
-          names(samp)) {
+      if (!inherits(samp, "try-error") && is.list(samp) && all(c("name", "measure") %in% names(samp))) {
         mfun <- samp
       } else {
         mfun <- list(name = "User-defined", measure = mfun, classes = NULL, 
