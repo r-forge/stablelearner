@@ -462,7 +462,7 @@ stability_internal <- function(x, learner, data, weights, control,
 accuracy <- function(x, measure = "kappa", na.action = na.exclude, 
                      applyfun = NULL, cores = NULL) {
   
-  if(class(x) == "stablelearner") x <- list(x)
+  if(inherits(x, "stablelearner")) x <- list(x)
   
   ## facilitate parallelization
   if (is.null(applyfun)) {
@@ -515,7 +515,7 @@ tuner <- function(method, tunerange, ...) {
 ## -----------------------------------------------------------------------------
 
 similarity_values <- function(x, reverse = TRUE)  {
-  if(class(x) == "stablelearner") {
+  if(inherits(x, "stablelearner")) {
     x <- list(x)
     class(x) <- "stablelearnerList"
   }
@@ -526,7 +526,7 @@ similarity_values <- function(x, reverse = TRUE)  {
 }
 
 reverse <- function(x, ...) {
-  if(class(x) == "stablelearner") x <- list(x)
+  if(inherits(x, "stablelearner")) x <- list(x)
   rval <- lapply(x, function(xx) {
     sval <- xx$sval
     rvalues <- sapply(seq(ncol(sval)), function(k) {
