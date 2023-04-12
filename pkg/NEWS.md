@@ -3,6 +3,9 @@
 * The `as.stabletree()` method for `RandomForest` objects (_party_ package)
   is now registered as an S3 (rather than S4) method.
 
+* Environment `.stabEnv` is only used internally by `stabletree()` and
+  hence not exported anymore in `NAMESPACE`.
+
 
 # stablelearner 0.1-4
 

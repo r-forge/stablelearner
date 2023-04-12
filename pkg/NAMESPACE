@@ -31,7 +31,6 @@ importClassesFrom("party", "RandomForest")
 export(
   ## stability assessment
   "stabletree",
-  ".stabEnv",
   "stability",
   "stab_control",
   "accuracy",
