@@ -1,3 +1,8 @@
+# stablelearner 0.1-6
+
+* Improve non-anchored links in manual pages (prompted by CRAN).
+
+
 # stablelearner 0.1-5
 
 * The `as.stabletree()` method for `RandomForest` objects (_party_ package)
